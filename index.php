@@ -20,12 +20,13 @@
     <?php 
     $first_number = 187;
     $second_number = 5221;
-    echo $second_number,  $first_number;
+    
+    echo "Second no is: $second_number" . $first_number . "is the 1st" ;
     ?>  
     </header>
 
     <div class="navbar">
-      <ul>
+      <ul> 
         <li> <a href="#"> Home </a> </li>
         <li><a href="#about">About</a></li>
         <li><a href="pages/contact.html">Contact</a></li>
