@@ -67,7 +67,7 @@
       }
     }
     ?>
-
+</div>
     <a name="about"></a>
     <div class="container">
       <img src="media/bkg.png" alt="yes">
