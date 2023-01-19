@@ -6,7 +6,7 @@ $result = mysqli_query($dbconn, $our_q);
 
 if (mysqli_num_rows($result) > 0) {
 
-    if ($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($result)) {
         $class_name = $row['name_class'];
         $description = $row['description'];
         $img = $row['thumb'];
