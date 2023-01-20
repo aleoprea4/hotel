@@ -60,7 +60,7 @@
                 <img src='media/$img' alt='Background'>
                 <h4>$class_name</h4>
                 <p>$description</p> <br>
-                <a href=\"roomdetail.php?ourtext='$id_room'\">Reserve room</a>
+                <a href=\"roomdetail.php?ourtext=$id_room\">Reserve room</a>
               </div>";
       }
     }
