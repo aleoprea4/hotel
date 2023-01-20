@@ -71,6 +71,7 @@ body{
  
  .container{
    position: relative;
+   width:800px;
  }
  .mynewdiv{
    position: absolute;
