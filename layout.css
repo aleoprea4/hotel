@@ -167,7 +167,7 @@ body{
    appearance: none;
    border-radius: 0; padding: 0; cursor: text;
  }
- input:focus, textarea:focus{
+ /* input:focus, textarea:focus{
    border-bottom: 1px solid #444;
  }
  input:placeholder-shown + label{
@@ -187,7 +187,7 @@ body{
  input:not(:placeholder-shown) + label, input:focus +label, textarea:not(:placeholder-shown) + label, textarea:focus +label{
    transform: translate(0, 0) scale(1);
    cursor: pointer;
- }
+ } */
  
  textarea{
    resize: none;

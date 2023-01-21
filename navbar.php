@@ -11,7 +11,7 @@ session_start();
 if(!$_SESSION['usssss']){
   echo "<li><a href='sign.php'>Sign in</a></li>";
 } else {
-  echo "<li><a href='#'> {$_SESSION['usssss']}</a></li>";
+  echo "<li><a href='profile.php'> {$_SESSION['usssss']}</a></li>";
   echo "<li><a href='logout.php'>Sign out</a></li>";
 }
 ?>
