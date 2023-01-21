@@ -8,38 +8,32 @@ session_start();
 <head>
   <meta charset="utf-8" />
   <title> The M hotels< </title>
-  <link rel="stylesheet" href="layout.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="layout.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style media="screen">
-    h1 {
-      font-size: 40px;
-    }
-  </style>
+      <style media="screen">
+        h1 {
+          font-size: 40px;
+        }
+      </style>
 
 </head>
 
 <body>
   <header class="ourClass">
     <h1>Welcome to The M hotel</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. </p>
-    <?php
-    $first_number = 187;
-    $second_number = 5221;
+    <p>Best hotel in the world</p>
 
-    echo "Second no is: $second_number" . $first_number . "is the 1st";
-    ?>
   </header>
   <?php
   include 'navbar.php';
   ?>
 
   <div class="ourParallax">
-    <h4>Hotel website</h4>
+    <h4>The M hotel</h4>
   </div>
 
-  <div class="col" style="width: 100%; text-align: center;">
+  <div class="col" style="width: 75%; text-align: center;">
     <?php
     include 'db/connection.php';
     // if($dbconn){
@@ -58,7 +52,7 @@ session_start();
         $img = $row['thumb'];
         $class_name = $row['name_class'];
         $description = $row['description'];
-        echo "rooms " . $number;
+      //  echo "rooms " . $number;
 
         echo "<div class='imgwr'>
                 <img src='media/$img' alt='Background'>
@@ -69,23 +63,23 @@ session_start();
       }
     }
     ?>
-</div>
-    <a name="about"></a>
-    <div class="container">
-      <img src="media/bkg.png" alt="yes">
-      <div class="mynewdiv">
-        <div class="centerforme">
-          About us
-        </div>
+  </div>
+  <a name="about"></a>
+  <div class="container">
+    <img src="media/bkg.png" alt="yes">
+    <div class="mynewdiv">
+      <div class="centerforme">
+        About us
       </div>
-      <!--mynewdiv-->
     </div>
-    <!--the end of container-->
+    <!--mynewdiv-->
+  </div>
+  <!--the end of container-->
 
 
-    <footer>
-      <p>&copy; Copyright | OurNewWebsite</p>
-    </footer>
+  <footer>
+ <br>   <p>&copy; Copyright | OurNewWebsite</p>
+  </footer>
 </body>
 
 </html>
