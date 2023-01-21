@@ -89,8 +89,46 @@ session_start();
 
     </div>
     <!--closing col dvi -->
+    <?php
+    if ($_SESSION['usssss']) {
+        $n_username = $_SESSION['usssss'];
+        include 'db/connection.php';
+        $check_user_exist = "select * from customers where username='$n_username'";
+        $run_check_exist = mysqli_query($dbconn, $check_user_exist);
 
+        while ($row = mysqli_fetch_assoc($run_check_exist)) {
+            $id = $row['id_customer'];
+        }
+        if(isset($_GET['ourtext'])){
+            $roomid = $_GET['ourtext'];
+        }
+        echo "<form action ='' method='post'>
+    <input type='datetime-local' name='fd' placeholder='From date'>
+    <input type='datetime-local' name='td' placeholder='To date'>
+    <input type='hidden' name='ri' placeholder='$roomid' value='$roomid'>
+    <input type='hidden' name='ci' value=$id>
+    <input type='text' name='nv' placeholder='No of visitors'>
+    <button type='submit' name='order'>Reserve</button>
+    
+</form>";
+    } else {
+        echo "<form action ='' method='post'>
+        <input type='text' name='usrname' placeholder='Create your username'>
+        <input type='text' name='pass' placeholder='Password'>
+        <input type='text' name='pass_s' placeholder='Retype password'>
+        <input type='text' name='fnn' placeholder='First name'>
+        <input type='text' name='lnn' placeholder='Last name'>
 
+        <input type='datetime-local' name='fdd' placeholder='From date'>
+        <input type='datetime-local' name='tdd' placeholder='To date'>
+        <input type='text' name='rii' placeholder='Room'>
+        <input type='text' name='cii' placeholder='Customer'>
+        <input type='text' name='nvv' placeholder='No of visitors'>
+        <button type='submit' name='order'>Reservation</button>
+        
+    </form>";
+    }
+    ?>
 </body>
 
 </html>

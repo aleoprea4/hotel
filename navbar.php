@@ -9,10 +9,10 @@ session_start();
         <li><a href="contact.php">Contact</a></li>
 <?php 
 if(!$_SESSION['usssss']){
-  echo "<li><a href='sign.php?'>Sign in</a></li>";
+  echo "<li><a href='sign.php'>Sign in</a></li>";
 } else {
   echo "<li><a href='#'> {$_SESSION['usssss']}</a></li>";
-  echo "<li><a href='logout.php?'>Sign out</a></li>";
+  echo "<li><a href='logout.php'>Sign out</a></li>";
 }
 ?>
 
