@@ -100,9 +100,9 @@ session_start();
             $id = $row['id_customer'];
         } 
 
-        while ($row = mysqli_fetch_assoc($run_check_exist)) {
-            $idsr = $row['id_customer'];
-        } 
+        // while ($row = mysqli_fetch_assoc($run_check_exist)) {
+        //     $idsr = $row['id_customer'];
+        // } 
     
         if(isset($_GET['ourtext'])){
             $roomid = $_GET['ourtext'];
@@ -117,26 +117,32 @@ session_start();
     <button type='submit' name='order'>Reserve room</button>
     
 </form>";
-    } elseif(isset($_GET['ourtext'])){
-        $roomids = $_GET['ourtext'];
-        $idsr = $row['id_customer'];
+    } else {
 
-        echo "<form action ='' method='post'>
-        <input type='text' name='usrname' placeholder='Create your username'>
-        <input type='password' name='pass' placeholder='Password'>
-        <input type='password' name='pass_s' placeholder='Retype password'>
-        <input type='text' name='fnn' placeholder='First name'>
-        <input type='text' name='lnn' placeholder='Last name'>
-
-        <input type='datetime-local' name='fdd' placeholder='From date'>
-        <input type='datetime-local' name='tdd' placeholder='To date'>
-        <input type='hidden' name='rii' placeholder='$roomids' value='$roomids'>
-        <input type='hidden' name='cii' value='$idsr'>
-        <input type='text' name='nvv' placeholder='No of visitors'>
-        <button type='submit' name='orderr'>Reserve 2</button>
-        
-    </form>";
+        echo "<li>Please login or create account to reserve a room </li>";
+       
     }
+
+    // if(isset($_GET['ourtext'])){
+    //     $roomids = $_GET['ourtext'];
+    //     $idsr = $row['id_customer'];
+
+    //     echo "<form action ='' method='post'>
+    //     <input type='text' name='usrname' placeholder='Create your username'>
+    //     <input type='password' name='pass' placeholder='Password'>
+    //     <input type='password' name='pass_s' placeholder='Retype password'>
+    //     <input type='text' name='fnn' placeholder='First name'>
+    //     <input type='text' name='lnn' placeholder='Last name'>
+
+    //     <input type='datetime-local' name='fdd' placeholder='From date'>
+    //     <input type='datetime-local' name='tdd' placeholder='To date'>
+    //     <input type='hidden' name='rii' placeholder='$roomids' value='$roomids'>
+    //     <input type='hidden' name='cii' value='$idsr'>
+    //     <input type='text' name='nvv' placeholder='No of visitors'>
+    //     <button type='submit' name='orderr'>Reserve 2</button>
+        
+    // </form>";
+    // }
     if(isset($_POST['order'])){
         $fd = $_POST['fd'];
         $td = $_POST['td'];
