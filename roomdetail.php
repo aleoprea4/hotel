@@ -99,9 +99,11 @@ session_start();
         while ($row = mysqli_fetch_assoc($run_check_exist)) {
             $id = $row['id_customer'];
         } 
+
         while ($row = mysqli_fetch_assoc($run_check_exist)) {
-            $ids = $row['id_customer'];
+            $idsr = $row['id_customer'];
         } 
+    
         if(isset($_GET['ourtext'])){
             $roomid = $_GET['ourtext'];
         }
@@ -117,8 +119,8 @@ session_start();
 </form>";
     } elseif(isset($_GET['ourtext'])){
         $roomids = $_GET['ourtext'];
-    }
-    {
+        $idsr = $row['id_customer'];
+
         echo "<form action ='' method='post'>
         <input type='text' name='usrname' placeholder='Create your username'>
         <input type='password' name='pass' placeholder='Password'>
@@ -129,7 +131,7 @@ session_start();
         <input type='datetime-local' name='fdd' placeholder='From date'>
         <input type='datetime-local' name='tdd' placeholder='To date'>
         <input type='hidden' name='rii' placeholder='$roomids' value='$roomids'>
-        <input type='hidden' name='cii' value='$ids'>
+        <input type='hidden' name='cii' value='$idsr'>
         <input type='text' name='nvv' placeholder='No of visitors'>
         <button type='submit' name='orderr'>Reserve 2</button>
         
