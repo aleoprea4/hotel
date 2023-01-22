@@ -61,6 +61,25 @@ include 'navbar.php';
     
         ?>
     </div>
+
+    <div class="ind" >
+  <ul>
+    <h3> Create a new room  </h3> <br> <br> 
+  </ul>
+</div>
+<div class="col" style="width: 100%; text-align: center;" >
+        <?php
+        include '../db/connection.php';
+        // if($dbconn){
+//             echo "Connected";
+// } else {echo "Not working";};
+        
+      
+
+
+    
+        ?>
+    </div>
     
 </body>
 </html>
