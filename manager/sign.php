@@ -22,7 +22,7 @@ if($_SESSION['admin_ses']){
 <body>
     <?php
     include 'navbar.php';
-    include 'db/connection.php';
+    include '../db/connection.php';
 
     if (isset($_GET['account'])) {
         //$account = 0;
