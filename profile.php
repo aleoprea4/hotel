@@ -94,7 +94,7 @@ while ($row = mysqli_fetch_assoc($r)) {
         $fromda = $row['from_date'];
         $toda = $row['to_date'];
 
-        echo "Date: reservation: {$date_reserv}, From date: {$fromda}, To date: {$toda}";
+        echo "<table><th>Date: reservation: {$date_reserv}, From date: {$fromda}, To date: {$toda} <br> <br></th></table>";
     }
     ?>
 

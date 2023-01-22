@@ -4,7 +4,7 @@ session_start();
 <div class="navbar">
       <ul> 
         <li> <a href="index.php"> Home </a> </li>
-        <li><a href="#about">About</a></li>
+        <li><a href="about.php">About</a></li>
         <li><a href="rooms.php">Rooms</a></li>
         <li><a href="contact.php">Contact</a></li>
 <?php 
