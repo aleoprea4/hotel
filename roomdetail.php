@@ -51,7 +51,10 @@ session_start();
         ?>
 
 <div class='imgwr'>
-       <br>
+            <h4>
+                <?php echo $class_name; ?>
+            </h4>
+            <p><?php echo $description; ?></p> <br>
             <br>
             <h4>This room is not available on these dates</h4>
             <table border="1">
@@ -147,7 +150,7 @@ session_start();
         $ci = $_POST['ci'];
         $nv = $_POST['nv'];
 
-        $now = date('d / m / Y, h:i:s');
+        $now = date('Y / m / d, h:i:sa');
         $sql = "insert into reservations (date_reserv, from_date, to_date, room_id, customer_id, number_person) 
          values ('$now', '$fd', '$td', '$ri', '$ci', '$nv')";
         $run_th = mysqli_query($dbconn, $sql);

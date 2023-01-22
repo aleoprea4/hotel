@@ -1,12 +1,12 @@
 <?php
 session_start();
-if (!$_SESSION['usssss']) { //if user not logged in, we do not show page
+if (!$_SESSION['admins_ses']) { //if user not logged in, we do not show page
     header("location: index.php");
 }
-$uname = $_SESSION['usssss'];
+$uname = $_SESSION['admin_ses'];
 
-include 'db/connection.php';
-$user_info = "select * from customers where username='$uname'";
+include '../db/connection.php';
+$user_info = "select * from auth_user where username='$uname'";
 $r = mysqli_query($dbconn, $user_info);
 
 while ($row = mysqli_fetch_assoc($r)) {
@@ -94,7 +94,6 @@ while ($row = mysqli_fetch_assoc($r)) {
         $fromda = $row['from_date'];
         $toda = $row['to_date'];
 
-        // echo "Date: reservation: {$date_reserv}, From date: {$fromda}, To date: {$toda}";
         echo "<table><th>Date: reservation: {$date_reserv}, From date: {$fromda}, To date: {$toda} <br> <br></th></table>";
     }
     ?>

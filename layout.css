@@ -9,6 +9,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   flex: auto;
+  background-color: transparent;
 }
 
 .ourClass {

@@ -37,6 +37,7 @@ session_start();
                 $img = $row['thumb'];
                 $class_name = $row['name_class'];
                 $description = $row['description'];
+              //  echo "rooms " . $number;
 
                 echo "<div class='imgwr'>
                 <img src='media/$img' alt='Background'>

@@ -52,8 +52,22 @@ if($_SESSION['usssss']){
 
         $pass = md5($password);
         $check_user = "select * from customers where username='$username' and password='$pass'";
+        $check_admin ="select * from auth_user";
 
         $run_check = mysqli_query($dbconn, $check_user);
+        $run_admin = mysqli_query($dbconn, $check_admin);
+
+        if (mysqli_num_rows($run_admin)) {
+            $_SESSION['admin_ses'] = $username;
+            header("location: ../manager/index.php");
+            //echo "<script>window.open('index.php', '_self');</script>";
+        }  else{
+            $_SESSION['usssss'] = $username;
+            header("location: index.php");
+            //echo "<script>window.open('index.php', '_self');</script>";
+      
+        } 
+
         if (mysqli_num_rows($run_check)) {
             $_SESSION['usssss'] = $username;
             header("location: index.php");

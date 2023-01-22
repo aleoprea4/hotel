@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
+    header("location: index.php");
+}
 
 ?>
 <!DOCTYPE html>

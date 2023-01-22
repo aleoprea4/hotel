@@ -7,7 +7,7 @@ session_start();
         <li><a href="about.php">About</a></li>
         <li><a href="rooms.php">Rooms</a></li>
         <li><a href="contact.php">Contact</a></li>
-        <li><a href="../manager/index.php">HMS</a></li>
+        <!-- <li><a href="../manager/index.php">HMS</a></li> -->
 <?php 
 if(!$_SESSION['usssss']){
   echo "<li><a href='sign.php'>Sign in</a></li>";
@@ -16,7 +16,11 @@ if(!$_SESSION['usssss']){
   echo "<li><a href='logout.php'>Sign out</a></li>";
 }
 ?>
-
+<?php
+  //  if ($_SESSION['admin_ses']) {
+  //     echo "<li><a href='../manager/index.php'>HMS</a></li>";
+  //   }
+?>
         <!-- <li><a href="sign.php">Sign In</a></li> -->
       </ul>
     </div>
