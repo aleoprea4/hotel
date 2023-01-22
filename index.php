@@ -33,7 +33,7 @@ session_start();
     <h4>The M hotel</h4>
   </div>
 
-  <div class="col" style="width: 75%; text-align: center;">
+  <div class="col" style="width: 100%; text-align: center;">
     <?php
     include 'db/connection.php';
     // if($dbconn){
