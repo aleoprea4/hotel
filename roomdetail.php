@@ -51,10 +51,7 @@ session_start();
         ?>
 
 <div class='imgwr'>
-            <h4>
-                <?php echo $class_name; ?>
-            </h4>
-            <p><?php echo $description; ?></p> <br>
+       <br>
             <br>
             <h4>This room is not available on these dates</h4>
             <table border="1">
