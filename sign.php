@@ -41,7 +41,7 @@ if($_SESSION['usssss']){
         echo "<h3>Sign in below: </h3><br><br><br><form action='' method='post'>";
         echo "<input type='text' name='una' placeholder='Username'>";
         echo "<input type='password' name='pass' placeholder='Password'>";
-        echo "<button type='submit' name='sub'>Sub Sign In</button>";
+        echo "<button type='submit' name='sub'>Sign In</button>";
         echo "</form><br>";
         echo "<a href='sign.php?account=0'>No account? Sign up!</a>";
     }
