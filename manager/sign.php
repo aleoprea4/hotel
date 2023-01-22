@@ -1,9 +1,6 @@
 <?php
 session_start();
-if($_SESSION['admin_ses']){
-    header("location: index.php");
 
-}
 
 ?>
 

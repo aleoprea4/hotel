@@ -1,14 +1,15 @@
 <?php
 session_start();
+
 ?>
 <div class="navbaradmin">
   <ul>
     <li> <a href="index.php"> Home </a> </li>
   </ul>
 
-  <ul>
+  <!-- <ul>
     <li><a href="#about">Users</a></li>
-  </ul>
+  </ul> -->
 
   <ul>
     <li><a href="rooms.php">Rooms</a></li>
