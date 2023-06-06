@@ -92,7 +92,7 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
     }
     ?>
     <h3>Create a new room</h3>
-    <form  method="post">
+    <form action="" method="post">
         <input type="text" name="id" value="<?php echo $id; ?>">
         <input type="text" name="firn" placeholder="<?php echo $fir; ?>">
         <input type="text" name="lan" placeholder="<?php echo $lan; ?>">
@@ -116,7 +116,7 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
 
     <?php
     if (isset($_POST['create'])) {
-        include '../db/connection.php';
+       // include '../db/connection.php';
         $id_u = $_POST['id'];
         $fn_u = $_POST['firn'];
         $ln_u = $_POST['lan'];
