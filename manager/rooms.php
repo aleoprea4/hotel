@@ -94,11 +94,11 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
     <h3>Create a new room</h3>
     <form action="" method="post">
         <input type="text" name="id" value="<?php echo $id; ?>">
-        <input type="text" name="firn" placeholder="<?php echo $fir; ?>">
-        <input type="text" name="lan" placeholder="<?php echo $lan; ?>">
-        <input type="text" name="biy" placeholder="<?php echo $by; ?>">
-        <input type="text" name="addr" placeholder="<?php echo $addr; ?>">
-        <input type="text" name="desc" placeholder="<?php echo $desc; ?>">
+        <input type="text" name="firn" value="<?php echo $fir; ?>">
+        <input type="text" name="lan" value="<?php echo $lan; ?>">
+        <input type="text" name="biy" value="<?php echo $by; ?>">
+        <input type="text" name="addr" value="<?php echo $addr; ?>">
+        <input type="text" name="desc" value="<?php echo $desc; ?>">
 
 
 
@@ -130,10 +130,8 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
         $r_edit_u = mysqli_query($dbconn, $sql_edit_u);
         if ($r_edit_u) {
             echo "Ati adaugat cu success o camera noua";
-        } else {
-            echo "NO";
-        }
     }
+}
     ?>
 
 <?php
