@@ -105,22 +105,6 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
         <button type="submit" name="create">Create a new room</button>
 
     </form>
-
-    <form action="" method="post">
-        <input type="text" name="id" value="<?php echo $id; ?>">
- 
-        <button type="submit" name="delete">Delete a room</button>
-
-    </form>
-<?php
-    if (isset($_POST['delete'])) {
-            $sql_delete_u = "delete from rooms where id_room=$id";
-            $r_delete_u = mysqli_query($dbconn, $sql_delete_u);
-            if ($r_delete_u) {
-                echo "Ati sters cu success o camera noua";
-            }
-        }
-        ?>
     <?php
     if (isset($_POST['create'])) {
         include '../db/connection.php';
@@ -161,6 +145,22 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
 
 
     ?>
+    <form action="" method="post">
+        <input type="text" name="id" value="<?php echo $id; ?>">
+ 
+        <button type="submit" name="delete">Delete a room</button>
+
+    </form>
+<?php
+    if (isset($_POST['delete'])) {
+            $sql_delete_u = "delete from rooms where id_room=$id";
+            $r_delete_u = mysqli_query($dbconn, $sql_delete_u);
+            if ($r_delete_u) {
+                echo "Ati sters cu success o camera noua";
+            }
+        }
+        ?>
+    
 
 </body>
 
