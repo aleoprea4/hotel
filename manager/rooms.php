@@ -92,7 +92,7 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
     }
     ?>
     <h3>Create a new room</h3>
-    <form action="" method="post">
+    <form  method="post">
         <input type="text" name="id" value="<?php echo $id; ?>">
         <input type="text" name="firn" placeholder="<?php echo $fir; ?>">
         <input type="text" name="lan" placeholder="<?php echo $lan; ?>">
@@ -126,7 +126,7 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
 
 
      
-        $sql_edit_u = "insert into rooms(id_room,room_num,room_class, capacity,price,description ) values ($id_u,$fn_u, $ln_u, $by_u, $addr_u, $desc_u )";
+        $sql_edit_u = "insert into rooms(room_num,room_class, capacity,price,description ) values ($fn_u, $ln_u, $by_u, $addr_u, $desc_u )";
         $r_edit_u = mysqli_query($dbconn, $sql_edit_u);
         if ($r_edit_u) {
             echo "Ati adaugat cu success o camera noua";
