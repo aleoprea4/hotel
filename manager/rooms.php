@@ -102,7 +102,7 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
 
 
 
-        <button type="submit" name="edit">Create a new room</button>
+        <button type="submit" name="create">Create a new room</button>
 
     </form>
 
