@@ -85,21 +85,21 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
     while ($row = mysqli_fetch_assoc($r)) {
         //  $uname = $row['username'];
         $id = $row['id_room'];
-        $fir = $row['room_num'];
-        $lan = $row['room_class'];
-        $by = $row['capacity'];
-        $addr = $row['price'];
-        $desc = $row['description'];
+        $run = $row['room_num'];
+        $rcl = $row['room_class'];
+        $rca = $row['capacity'];
+        $rpr = $row['price'];
+        $rdesc = $row['description'];
     }
     ?>
     <h3>Create a new room</h3>
     <form action="" method="post">
        <!-- <input type="text" name="id" value="<--?php echo $id; ?>"> -->
-        <input type="text" name="firn" placeholder="Numar camera"  <?php echo $fir; ?>>
-        <input type="text" name="lan" placeholder="Clasa camera" <?php echo $lan; ?> >
-        <input type="text" name="biy" placeholder="Capacitate" <?php echo $by; ?>   >
-        <input type="text" name="addr" placeholder="Pret" <?php echo $addr; ?>>
-        <input type="text" name="desc"placeholder="Descriere" <?php echo $desc; ?>>
+        <input type="text" name="run" placeholder="Numar camera  <?php echo $run; ?>">
+        <input type="text" name="rcl" placeholder="Clasa camera <?php echo $rcl; ?>" >
+        <input type="text" name="rca" placeholder="Capacitate <?php echo $rca; ?>">
+        <input type="text" name="rpr" placeholder="Pret <?php echo $rpr; ?>">
+        <input type="text" name="rdesc"placeholder="Descriere <?php echo $rdesc; ?>">
 
 
 
@@ -119,11 +119,11 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
     if (isset($_POST['create'])) {
        // include '../db/connection.php';
         $id_u = $_POST['id'];
-        $fn_u = $_POST['firn'];
-        $ln_u = $_POST['lan'];
-        $by_u = $_POST['biy'];
-        $addr_u = $_POST['addr'];
-        $desc_u = $_POST['desc'];
+        $fn_u = $_POST['run'];
+        $ln_u = $_POST['rcl'];
+        $by_u = $_POST['rca'];
+        $addr_u = $_POST['rpr'];
+        $desc_u = $_POST['rdesc'];
 
 
      
