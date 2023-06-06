@@ -122,7 +122,7 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
         }
         ?>
     <?php
-    if (isset($_POST['edit'])) {
+    if (isset($_POST['create'])) {
         include '../db/connection.php';
         $id_u = $_POST['id'];
         $fn_u = $_POST['firn'];
