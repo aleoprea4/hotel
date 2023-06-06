@@ -93,7 +93,7 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
     ?>
     <h3>Create a new room</h3>
     <form action="" method="post">
-        <input type="text" name="id" value="<?php echo $id; ?>">
+       <!-- <input type="text" name="id" value="<--?php echo $id; ?>"> -->
         <input type="text" name="firn" value="<?php echo $fir; ?>">
         <input type="text" name="lan" value="<?php echo $lan; ?>">
         <input type="text" name="biy" value="<?php echo $by; ?>">
