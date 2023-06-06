@@ -95,11 +95,11 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
     <h3>Create a new room</h3>
     <form action="" method="post">
        <!-- <input type="text" name="id" value="<--?php echo $id; ?>"> -->
-        <input type="text" name="firn" value="<?php echo $fir; ?>" placeholder="Numar camera">
-        <input type="text" name="lan" value="<?php echo $lan; ?>" placeholder="Clasa camera">
-        <input type="text" name="biy" value="<?php echo $by; ?>"    placeholder="Capacitate">
-        <input type="text" name="addr" value="<?php echo $addr; ?>" placeholder="Pret">
-        <input type="text" name="desc" value="<?php echo $desc; ?>"placeholder="Descriere">
+        <input type="text" name="firn" placeholder="Numar camera"  value="<?php echo $fir; ?>" >
+        <input type="text" name="lan" placeholder="Clasa camera" value="<?php echo $lan; ?>" >
+        <input type="text" name="biy" placeholder="Capacitate" value="<?php echo $by; ?>"    >
+        <input type="text" name="addr" placeholder="Pret" value="<?php echo $addr; ?>" >
+        <input type="text" name="desc"placeholder="Descriere" value="<?php echo $desc; ?>">
 
 
 
