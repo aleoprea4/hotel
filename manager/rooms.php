@@ -103,8 +103,17 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
 
 
         <button type="submit" name="create">Create a new room</button>
+        <div>  </div>
 
     </form>
+   
+    <form action="" method="post">
+        <input type="text" name="id" value="<?php echo $id; ?>">
+ 
+        <button type="submit" name="delete">Delete a room</button>
+
+    </form>
+
     <?php
     if (isset($_POST['create'])) {
         include '../db/connection.php';
@@ -116,23 +125,7 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
         $desc_u = $_POST['desc'];
 
 
-        // if ($fn_u == '') {
-        //     echo "Please add your firstname";
-        //     exit();
-        // } else if ($ln_u == '') {
-        //     echo "Please add your lastname";
-        //     exit();
-        // } else if ($by_u == '') {
-        //     echo "Please add your birthyear";
-        //     exit();
-        // } else if ($addr_u == '') {
-        //     echo "Please add your address";
-        //     exit();
-        // } 
-        // else if ($desc_u == '') {
-        //     echo "Please add your description";
-        //     exit();
-        // }else {
+     
         $sql_edit_u = "insert into rooms(id_room,room_num,room_class, capacity,price,description ) values ($id_u,$fn_u, $ln_u, $by_u, $addr_u, $desc_u )";
         $r_edit_u = mysqli_query($dbconn, $sql_edit_u);
         if ($r_edit_u) {
@@ -141,16 +134,8 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
             echo "NO";
         }
     }
-    // }
-
-
     ?>
-    <form action="" method="post">
-        <input type="text" name="id" value="<?php echo $id; ?>">
- 
-        <button type="submit" name="delete">Delete a room</button>
 
-    </form>
 <?php
     if (isset($_POST['delete'])) {
             $sql_delete_u = "delete from rooms where id_room=$id";
@@ -161,6 +146,8 @@ if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
         }
         ?>
     
+
+
 
 </body>
 
