@@ -1,5 +1,22 @@
 <?php
 session_start();
+if (!$_SESSION['admins_ses']) { //if user not logged in, we do not show page
+    header("location: index.php");
+}
+$uname = $_SESSION['admin_ses'];
+
+include '../db/connection.php';
+$user_info = "select * from auth_user where username='$uname'";
+$r = mysqli_query($dbconn, $user_info);
+
+while ($row = mysqli_fetch_assoc($r)) {
+    //  $uname = $row['username'];
+    $id = $row['id_customer'];
+    $fir = $row['first_name'];
+    $lan = $row['last_name'];
+    $by = $row['birth_year'];
+    $addr = $row['address'];
+}
 
 ?>
 <!DOCTYPE html>
