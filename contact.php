@@ -27,7 +27,7 @@ session_start();
       <form class="ourform" action="" method="post">
         <div class="ourfields">
           <input type="text" name="una" placeholder="Username" id="usr">
-          <label for="usr">Username</label>
+          <label for="usr">Nume</label>
         </div>
         <div class="ourfields">
           <input type="email" name="em" placeholder="Email" id="email">
@@ -35,10 +35,10 @@ session_start();
         </div>
         <div class="ourfields">
           <textarea name="txt" rows="8" cols="80" placeholder="Add your text here..." id="txta"></textarea>
-          <label for="txta">Your text here</label>
+          <label for="txta">Va rugam sa scrieti mai jos ceea ce doriti sa ne transmiteti</label>
         </div>
         <div  style="text-align: center;">
-          <button type="submit" name="button">Click me</button>
+          <button type="submit" name="button">Trimite</button>
         </div>
       </form>
     </div>
