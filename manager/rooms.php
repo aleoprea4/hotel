@@ -1,153 +1,46 @@
-<?php
-session_start();
-if (!$_SESSION['admin_ses']) { //if user not logged in, we do not show page
-    header("location: index.php");
-}
+<h3>Create a new room</h3>
+<form action="" method="post">
+    <input type="text" name="room_number" placeholder="Numar camera">
+    <input type="text" name="room_class" placeholder="Clasa camera">
+    <input type="text" name="room_capacity" placeholder="Capacitate">
+    <input type="text" name="room_price" placeholder="Pret">
+    <input type="text" name="room_description" placeholder="Descriere">
+    <button type="submit" name="create">Create a new room</button>
+</form>
 
+<?php
+if (isset($_POST['create'])) {
+    $room_number = mysqli_real_escape_string($dbconn, $_POST['room_number']);
+    $room_class = mysqli_real_escape_string($dbconn, $_POST['room_class']);
+    $room_capacity = mysqli_real_escape_string($dbconn, $_POST['room_capacity']);
+    $room_price = mysqli_real_escape_string($dbconn, $_POST['room_price']);
+    $room_description = mysqli_real_escape_string($dbconn, $_POST['room_description']);
+
+    $sql_insert_room = "INSERT INTO rooms(room_num, room_class, capacity, price, description) 
+    VALUES ($room_number, '$room_class', $room_capacity, $room_price, '$room_description')";
+    $result_insert_room = mysqli_query($dbconn, $sql_insert_room);
+    if ($result_insert_room) {
+        echo "Ati adaugat cu success o camera noua";
+    } else {
+        echo "A aparut o eroare: " . mysqli_error($dbconn);
+    }
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel management system</title>
-    <link rel="stylesheet" href="../layout.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style media="screen">
-        h1 {
-            font-size: 40px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <?php
-    include 'navbar.php';
-    ?>
-
-    <div class="ind">
-        <ul>
-            <h3> Edit available rooms below </h3> <br> <br>
-        </ul>
-    </div>
-    <div class="col" style="width: 100%; text-align: center;">
-        <?php
-        include '../db/connection.php';
-        // if($dbconn){
-//             echo "Connected";
-// } else {echo "Not working";};
-        
-        $our_q = "select rooms.*, rclass.* from rooms inner join rclass on rclass.id_class = rooms.room_class";
-        $result = mysqli_query($dbconn, $our_q);
-
-        if (mysqli_num_rows($result) > 0) {
-
-            while ($row = mysqli_fetch_assoc($result)) {
-                $id_room = $row['id_room'];
-                $number = $row['room_num'];
-                $capacity = $row['capacity'];
-                $img = $row['thumb'];
-                $class_name = $row['name_class'];
-                $description = $row['description'];
-
-                echo "<div class='imgwr'>
-                <img src='../media/$img' alt='Background'>
-                <h4>Room type: $class_name</h4>
-                <p>$description</p> <br>
-                <p>$id_room</p> <br>
-                <a href='roomanager.php?ourtext=$id_room'>Make changes to this room</a><br>
-              </div>";
-            }
-        }
-
-
-
-        ?>
-    </div>
-
-    <div class="ind">
-        <ul>
-            <h3> Create a new room </h3> <br> <br>
-        </ul>
-    </div>
-    <div class="col" style="width: 100%; text-align: center;">
-
-    </div>
-    <?php
-    include '../db/connection.php';
-    $room_info = "select rooms.* from rooms";
-    $r = mysqli_query($dbconn, $room_info);
-
-    while ($row = mysqli_fetch_assoc($r)) {
-        //  $uname = $row['username'];
-        $id = $row['id_room'];
-        $run = $row['room_num'];
-        $rcl = $row['room_class'];
-        $rca = $row['capacity'];
-        $rpr = $row['price'];
-        $rdesc = $row['description'];
-    }
-    ?>
-    <h3>Create a new room</h3>
-    <form action="" method="post">
-       <!-- <input type="text" name="id" value="<--?php echo $id; ?>"> -->
-        <input type="text" name="run" value="Numar camera  <?php echo $run; ?>">
-        <input type="text" name="rcl" value="Clasa camera <?php echo $rcl; ?>" >
-        <input type="text" name="rca" value="Capacitate <?php echo $rca; ?>">
-        <input type="text" name="rpr" value="Pret <?php echo $rpr; ?>">
-        <input type="text" name="rdesc" value="Descriere <?php echo $rdesc; ?>">
-
-
-
-        <button type="submit" name="create">Create a new room</button>
-        <div>  </div>
-
-    </form>
-   
-    <form action="" method="post">
-        <input type="text" name="id" value="<?php echo $id; ?>">
- 
-        <button type="submit" name="delete">Delete a room</button>
-
-    </form>
-
-    <?php
-    if (isset($_POST['create'])) {
-       // include '../db/connection.php';
-        $id_u = $_POST['id'];
-        $fn_u = $_POST['run'];
-        $ln_u = $_POST['rcl'];
-        $by_u = $_POST['rca'];
-        $addr_u = $_POST['rpr'];
-        $desc_u = $_POST['rdesc'];
-
-
-     
-        $sql_edit_u = "insert into rooms(room_num,room_class, capacity,price,description ) values ($fn_u, $ln_u, $by_u, $addr_u, $desc_u )";
-        $r_edit_u = mysqli_query($dbconn, $sql_edit_u);
-        if ($r_edit_u) {
-            echo "Ati adaugat cu success o camera noua";
-    }
-}
-    ?>
+<form action="" method="post">
+    <input type="text" name="id_room" placeholder="Id camera">
+    <button type="submit" name="delete">Delete a room</button>
+</form>
 
 <?php
-    if (isset($_POST['delete'])) {
-            $sql_delete_u = "delete from rooms where id_room=$id";
-            $r_delete_u = mysqli_query($dbconn, $sql_delete_u);
-            if ($r_delete_u) {
-                echo "Ati sters cu success o camera noua";
-            }
-        }
-        ?>
-    
-
-
-
-</body>
-
-</html>
+if (isset($_POST['delete'])) {
+    $id_room = mysqli_real_escape_string($dbconn, $_POST['id_room']);
+    $sql_delete_room = "DELETE FROM rooms WHERE id_room = $id_room";
+    $result_delete_room = mysqli_query($dbconn, $sql_delete_room);
+    if ($result_delete_room) {
+        echo "Ati sters cu succes o camera.";
+    } else {
+        echo "A aparut o eroare: " . mysqli_error($dbconn);
+    }
+}
+?>
