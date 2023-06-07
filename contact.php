@@ -38,10 +38,24 @@ session_start();
           <label for="txta">Va rugam sa scrieti mai jos ceea ce doriti sa ne transmiteti</label>
         </div>
         <div  style="text-align: center;">
-          <button type="submit" name="button">Trimite</button>
+          <button type="submit" name="trimite">Trimite</button>
         </div>
       </form>
     </div>
+
+   <?php if (isset($_POST['trimite'])) {
+  $usr = $conn->real_escape_string($_POST['una']);
+  $email = $conn->real_escape_string($_POST['em']);
+  $txt = $conn->real_escape_string($_POST['txt']);
+
+  $sql = "INSERT INTO contact (Username, Email, Message) VALUES ('$usr', '$email', '$txt')";
+
+  if ($conn->query($sql) === TRUE) {
+    echo "Mesaj trimis cu succes!";
+  } else {
+    echo "Eroare: " . $sql . "<br>" . $conn->error;
+  }
+} ?>
 
     <div class="newContainer">
       <img src="../media/background.jpg" alt="ad" class="image">
