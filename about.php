@@ -16,7 +16,12 @@ session_start();
           font-size: 40px;
         }
       </style>
- <div class="newContainer">
+
+
+<?php
+  include 'navbar.php';
+  ?>
+   <div class="newContainer">
       <img src="../media/background.jpg" alt="ad" class="image">
       <div class="overlay">
         <div class="text">
@@ -24,7 +29,4 @@ session_start();
       </div>
       </div>
     </div>
-</head>
-<?php
-  include 'navbar.php';
-  ?>
+    </head>
