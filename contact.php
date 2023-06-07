@@ -47,8 +47,8 @@ session_start();
       <img src="../media/background.jpg" alt="ad" class="image">
       <div class="overlay">
         <div class="text">
-          You can add text
-        </div>
+      Banner
+      </div>
       </div>
     </div>
 
