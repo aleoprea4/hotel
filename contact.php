@@ -53,7 +53,7 @@ session_start();
   if ($conn->query($sql) === TRUE) {
     echo "Mesaj trimis cu succes!";
   } else {
-    echo "Eroare: " . $sql . "<br>" . $conn->error;
+    echo "Eroare: " ;
   }
 } ?>
 
