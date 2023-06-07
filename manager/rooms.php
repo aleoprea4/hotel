@@ -91,7 +91,7 @@ include '../db/connection.php';
         $room_description = mysqli_real_escape_string($dbconn, $_POST['room_description']);
 
         $sql_insert_room = "INSERT INTO rooms(room_num, room_class, capacity, price, description) 
-        VALUES ($room_number, '$room_class', $room_capacity, $room_price, '$room_description')";
+        VALUES ($room_number, $room_class, $room_capacity, $room_price, '$room_description')";
         $result_insert_room = mysqli_query($dbconn, $sql_insert_room);
         if ($result_insert_room) {
             echo "Ati adaugat cu success o camera noua";
